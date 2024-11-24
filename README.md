@@ -164,9 +164,9 @@ Breakdown:
 
 ## How Dependencies Were Added
 
-* Initializing the Go Module
+1) Initializing the Go Module
 
-** The project was initialized with the go mod command to manage dependencies. This is done as follows:
+* The project was initialized with the go mod command to manage dependencies. This is done as follows:
 
 ```text
 go mod init receipt-processor
@@ -174,18 +174,17 @@ go mod init receipt-processor
 
 This created the go.mod file for the project.
 
-*  Adding the uuid Dependency
-** In this project, we use the google/uuid package to generate unique IDs for receipts. To add this dependency, I ran the following command:
+2)  Adding the uuid Dependency
+* In this project, we use the google/uuid package to generate unique IDs for receipts. To add this dependency, I ran the following command:
 
 ```text
 go get github.com/google/uuid@v1.3.0
 ```
-**This command does two things:
+* This command does two things:
+  -  It downloads the uuid package version v1.3.0.
+  -  It updates the go.mod file to include this dependency.
 
-*** It downloads the uuid package version v1.3.0.
-*** It updates the go.mod file to include this dependency.
-
-** This is reflected in the go.mod file as shown below:
+* This is reflected in the go.mod file as shown below:
 
 go.mod:
 ```text
@@ -196,17 +195,17 @@ go 1.23.3
 require github.com/google/uuid v1.3.0
 ```
 
-*  go.sum File
-** The go.sum file is automatically updated to ensure the integrity of the downloaded dependencies. It contains checksums for the dependencies, ensuring that the exact version of each dependency is used across different machines or environments.
+3)  go.sum File
+* The go.sum file is automatically updated to ensure the integrity of the downloaded dependencies. It contains checksums for the dependencies, ensuring that the exact version of each dependency is used across different machines or environments.
 
-** This is what the go.sum file looks like for the uuid package:
+* This is what the go.sum file looks like for the uuid package:
 ```text
 go.sum:
 
 github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
 github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 ```
-** These checksums are automatically generated and stored when the dependency is fetched, and they ensure the integrity of the uuid package.
+* These checksums are automatically generated and stored when the dependency is fetched, and they ensure the integrity of the uuid package.
 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/d9bf0009-feb8-49db-a54a-a45624efcf12">
 
