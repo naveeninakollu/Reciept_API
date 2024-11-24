@@ -150,21 +150,23 @@ Breakdown:
   = 109 points
 ```
 
-## TECH STACK USED:
+### TECH STACK USED:
 
 * Language : GO
 * Testing  : POSTMAN
 
 ---
 
-## SETUP
+### SETUP
 
 * First Install GO and have VSCode installed in your system
-* Now add dependencies in you GO Project 
+* Now add dependencies in you GO Project
 
-## How Dependencies Were Added
+---
 
-### 1) Initializing the Go Module
+### How Dependencies Were Added
+
+#### 1) Initializing the Go Module
 
 * The project was initialized with the go mod command to manage dependencies. This is done as follows:
 
@@ -174,7 +176,7 @@ go mod init receipt-processor
 
 This created the go.mod file for the project.
 
-### 2)  Adding the uuid Dependency
+#### 2)  Adding the uuid Dependency
 * In this project, we use the google/uuid package to generate unique IDs for receipts. To add this dependency, I ran the following command:
 
 ```text
@@ -195,7 +197,7 @@ go 1.23.3
 require github.com/google/uuid v1.3.0
 ```
 
-### 3)  go.sum File
+#### 3)  go.sum File
 * The go.sum file is automatically updated to ensure the integrity of the downloaded dependencies. It contains checksums for the dependencies, ensuring that the exact version of each dependency is used across different machines or environments.
 
 * This is what the go.sum file looks like for the uuid package:
@@ -209,22 +211,24 @@ github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+
   
 ---
 
-## Running the Application
+### Running the Application
 
-## 1) Install dependencies:
+#### 1) Install dependencies:
 ```text
 go mod tidy
 ```
 * This will ensure that all dependencies are properly installed and that the go.mod and go.sum files are in sync.
 
-## 2) Run the application:
+#### 2) Run the application:
 
 ```text
 go run main.go
 ```
 The application will be running at http://localhost:8080, and we can test the API using a tool like Postman.
 
-## Tessting the API
+---
+
+### Tessting the API
 
 * POST Request 
 ```text
