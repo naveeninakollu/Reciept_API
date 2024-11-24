@@ -164,7 +164,7 @@ Breakdown:
 
 ## How Dependencies Were Added
 
-1) Initializing the Go Module
+### 1) Initializing the Go Module
 
 * The project was initialized with the go mod command to manage dependencies. This is done as follows:
 
@@ -174,7 +174,7 @@ go mod init receipt-processor
 
 This created the go.mod file for the project.
 
-2)  Adding the uuid Dependency
+### 2)  Adding the uuid Dependency
 * In this project, we use the google/uuid package to generate unique IDs for receipts. To add this dependency, I ran the following command:
 
 ```text
@@ -195,7 +195,7 @@ go 1.23.3
 require github.com/google/uuid v1.3.0
 ```
 
-3)  go.sum File
+### 3)  go.sum File
 * The go.sum file is automatically updated to ensure the integrity of the downloaded dependencies. It contains checksums for the dependencies, ensuring that the exact version of each dependency is used across different machines or environments.
 
 * This is what the go.sum file looks like for the uuid package:
@@ -206,9 +206,36 @@ github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
 github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 ```
 * These checksums are automatically generated and stored when the dependency is fetched, and they ensure the integrity of the uuid package.
+  
+---
 
+## Running the Application
+
+## 1) Install dependencies:
+```text
+go mod tidy
+```
+* This will ensure that all dependencies are properly installed and that the go.mod and go.sum files are in sync.
+
+## 2) Run the application:
+
+```text
+go run main.go
+```
+The application will be running at http://localhost:8080, and we can test the API using a tool like Postman.
+
+## Tessting the API
+
+* POST Request 
+```text
+http://localhost:8080/receipts/process
+```
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/d9bf0009-feb8-49db-a54a-a45624efcf12">
+* GET Request to get the points 
 
+```text
+http://localhost:8080/receipts/f4179e32-f402-4c60-9aea-2d4ad4ce5318/points
+```
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/34e4ce20-0479-4be3-9101-0c75e84d3d7b">
 
 
