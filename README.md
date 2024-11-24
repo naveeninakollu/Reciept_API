@@ -230,18 +230,25 @@ The application will be running at http://localhost:8080, and we can test the AP
 
 ### Tessting the API
 
-* POST Request 
+* POST Request
+  
 ```text
 http://localhost:8080/receipts/process
 ```
+
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/d9bf0009-feb8-49db-a54a-a45624efcf12">
+
 * GET Request to get the points 
 
 ```text
 http://localhost:8080/receipts/f4179e32-f402-4c60-9aea-2d4ad4ce5318/points
 ```
+
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/34e4ce20-0479-4be3-9101-0c75e84d3d7b">
 
+---
 
+### Conclusion
 
+* This repository includes a Go-based receipt processor with an API that generates unique IDs and calculates points for receipts based on specific rules. The project utilizes Go modules for dependency management, and the dependencies (uuid package) are included in the go.mod and go.sum files.
 
